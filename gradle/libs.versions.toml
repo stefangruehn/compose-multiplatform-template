@@ -1,0 +1,41 @@
+[versions]
+agp = "9.4.0"
+kotlin = "2.4.10"
+compose-multiplatform = "1.12.0"
+material3 = "1.9.0"
+coroutines = "1.11.0"
+activity-compose = "1.13.0"
+aboutlibraries = "15.2.0"
+markdown-renderer = "0.45.0"
+detekt = "2.0.0-alpha.6"
+compose-rules = "0.6.6"
+robolectric = "4.17"
+androidx-compose-ui = "1.12.0"
+compile-sdk = "37"
+target-sdk = "37"
+min-sdk = "29"
+
+[libraries]
+compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose-multiplatform" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose-multiplatform" }
+compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose-multiplatform" }
+compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose-multiplatform" }
+compose-ui-test = { module = "org.jetbrains.compose.ui:ui-test", version.ref = "compose-multiplatform" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose-ui" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+aboutlibraries-compose-m3 = { module = "com.mikepenz:aboutlibraries-compose-m3", version.ref = "aboutlibraries" }
+markdown-renderer-m3 = { module = "com.mikepenz:multiplatform-markdown-renderer-m3", version.ref = "markdown-renderer" }
+detekt-ktlint-wrapper = { module = "dev.detekt:detekt-rules-ktlint-wrapper", version.ref = "detekt" }
+compose-rules-detekt = { module = "io.nlopez.compose.rules:detekt", version.ref = "compose-rules" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-kmp-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+aboutlibraries-android = { id = "com.mikepenz.aboutlibraries.plugin.android", version.ref = "aboutlibraries" }
+detekt = { id = "dev.detekt", version.ref = "detekt" }

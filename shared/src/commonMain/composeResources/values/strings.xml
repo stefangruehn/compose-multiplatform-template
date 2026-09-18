@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shared by several screens -->
+    <string name="app_name">Template App</string>
+
+    <!-- Top bar and menu -->
+    <string name="menu_open">Open menu</string>
+    <string name="menu_close">Close menu</string>
+    <string name="menu_open_settings">Open settings</string>
+    <string name="menu_hide_group">Hide pages under %1$s</string>
+    <string name="menu_show_group">Show pages under %1$s</string>
+    <string name="menu_exit">Exit</string>
+
+    <!-- Page titles -->
+    <string name="page_home">Home</string>
+    <string name="page_example">Example</string>
+    <string name="page_about">About</string>
+    <string name="page_help">Help</string>
+    <string name="page_imprint">Imprint</string>
+    <string name="page_privacy">Privacy</string>
+    <string name="page_changelog">Changelog</string>
+    <string name="page_libraries">Libraries</string>
+    <string name="page_settings">Settings</string>
+
+    <!-- The line on each page's card under its group -->
+    <string name="page_example_detail">A counter and a line from platform code: a page to copy for your own.</string>
+    <string name="page_help_detail">How to use the app, page by page.</string>
+    <string name="page_imprint_detail">Who makes the app.</string>
+    <string name="page_privacy_detail">What the app does with your data.</string>
+    <string name="page_changelog_detail">What changed in each version.</string>
+    <string name="page_libraries_detail">The open-source libraries the app is built on, with their licences.</string>
+
+    <!-- Example page -->
+    <string name="example_counter">Counter</string>
+    <plurals name="example_count">
+        <item quantity="one">Tapped %1$d time</item>
+        <item quantity="other">Tapped %1$d times</item>
+    </plurals>
+    <string name="example_tap">Tap</string>
+    <string name="example_reset">Reset</string>
+    <string name="example_platform">Platform</string>
+    <string name="example_platform_detail">Running on %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_general">General</string>
+    <string name="settings_start">Start page</string>
+    <string name="settings_start_home">Home</string>
+    <string name="settings_start_home_detail">Open on Home, with a card for each page under it</string>
+    <string name="settings_start_last">Last page</string>
+    <string name="settings_start_last_detail">Open on the page you left, apart from Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">Follow system</string>
+    <string name="settings_theme_system_detail">Light or dark, as the phone is set</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_light_detail">Always light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_dark_detail">Always dark</string>
+</resources>
