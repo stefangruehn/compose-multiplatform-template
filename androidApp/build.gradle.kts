@@ -13,8 +13,8 @@ android {
         applicationId = "com.example.template"
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
     }
 
     // Optional release signing, from a Gradle property or else an environment variable of the same meaning.

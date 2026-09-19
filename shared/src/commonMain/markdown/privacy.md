@@ -2,7 +2,8 @@ Replace this page with your privacy policy. The text below describes the templat
 
 ## Data the app keeps
 
-The app keeps its settings (theme, start page and the page you left) on the phone. It sends
+The app keeps its settings (theme, start page, the page you left, the groups folded away in the menu
+and where each page was scrolled to) on the phone. It sends
 nothing anywhere and asks for no permissions.
 
 ## Last updated

@@ -13,11 +13,14 @@ import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringResource
 
-/** A page to copy: a counter with its text from string resources, and a line from platform code. */
+/**
+ * A page to copy: a counter with its text from string resources, and a line from platform code; [scroll] keeps
+ * where the page was left.
+ */
 @Composable
-fun ExamplePage() {
+fun ExamplePage(scroll: PageScroll? = null) {
     var count by rememberSaveable { mutableIntStateOf(0) }
-    CardColumn {
+    CardColumn(scroll) {
         PageCard(Page.Example.icon, stringResource(Res.string.example_counter)) {
             Text(
                 pluralStringResource(Res.plurals.example_count, count, count),

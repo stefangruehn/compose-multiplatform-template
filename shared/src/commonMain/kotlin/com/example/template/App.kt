@@ -53,6 +53,7 @@ fun App(
     LaunchedEffect(page) {
         if (page != Page.Settings && page != latest.lastPage) keep(latest.copy(lastPage = page))
     }
+    val scroll = rememberPageScroll(page, preferences, onPreferences)
 
     MaterialTheme(colorScheme = colorSchemeOf(preferences.theme)) {
         ModalNavigationDrawer(
@@ -64,6 +65,8 @@ fun App(
                 Menu(
                     drawer,
                     page,
+                    preferences.folded,
+                    onFold = { keep(latest.copy(folded = it)) },
                     onClose = { scope.launch { drawer.close() } },
                     onPage = {
                         page = it
@@ -86,7 +89,14 @@ fun App(
                             .fillMaxWidth()
                             .padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                     ) {
-                        PageContent(page, libraries, preferences, onPreferences, onPage = { page = it })
+                        PageContent(
+                            page,
+                            libraries,
+                            preferences,
+                            onPreferences,
+                            onPage = { page = it },
+                            scroll = scroll,
+                        )
                     }
                 }
             }

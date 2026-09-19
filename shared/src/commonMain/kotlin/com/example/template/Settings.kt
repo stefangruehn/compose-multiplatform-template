@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.verticalScroll
@@ -46,8 +45,17 @@ enum class Start(override val title: StringResource, override val detail: String
     Last(Res.string.settings_start_last, Res.string.settings_start_last_detail),
 }
 
-/** Everything the user sets, kept between runs; [lastPage] is where [Start.Last] opens. */
-data class Preferences(val theme: Theme = Theme.System, val start: Start = Start.Home, val lastPage: Page = Page.Home)
+/**
+ * Everything the user sets, kept between runs; [lastPage] is where [Start.Last] opens, [folded] the menu's groups
+ * folded away, [scroll] where each page was left.
+ */
+data class Preferences(
+    val theme: Theme = Theme.System,
+    val start: Start = Start.Home,
+    val lastPage: Page = Page.Home,
+    val folded: Set<Page> = emptySet(),
+    val scroll: Map<Page, Position> = emptyMap(),
+)
 
 /** Material's default colours; pass your own to these builders to brand the app. */
 private val AppLight = lightColorScheme()
@@ -64,11 +72,11 @@ fun Theme.isDark(systemDark: Boolean): Boolean = when (this) {
 @Composable
 fun colorSchemeOf(theme: Theme): ColorScheme = if (theme.isDark(isSystemInDarkTheme())) AppDark else AppLight
 
-/** Settings, grouped in cards. */
+/** Settings, grouped in cards; [scroll] keeps where the page was left. */
 @Composable
-fun SettingsPage(preferences: Preferences, onPreferences: (Preferences) -> Unit) {
+fun SettingsPage(preferences: Preferences, onPreferences: (Preferences) -> Unit, scroll: PageScroll? = null) {
     Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+        modifier = Modifier.fillMaxSize().verticalScroll(pageScrollState(scroll)),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         SettingsCard(stringResource(Res.string.settings_general), Res.drawable.tune) {
